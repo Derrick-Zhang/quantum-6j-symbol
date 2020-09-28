@@ -28,6 +28,7 @@ qbino[p_,q_]:=qfac[p]/(qfac[q]qfac[p-q])(*q-binomial*)
 Rel[x_]:=x/.{a->\[Lambda]^(3/2)q^(-5/2)tr,Q->\[Lambda]^(3/4)q^(-5/4)tr^(1/2),tr->\[Lambda]^(-1/2)q^(3/2)}
 (* change of variables from HOMFLY-PT to get Kauffman *)
 
+(* functions needed for double box fusion matrix *)
 cassimir[n_,r_]:=1/2 ((n-1)*Sum[r[[i]],{i,1,Length[r]}]+Sum[r[[i]],{i,1,Length[r]}]+Sum[r[[i]]^2-2*i*r[[i]],{i,1,Length[r]}])
 (* casimir for SO(n) representation r *)
 \[Lambda]pls[n_,1]:=t^(2cassimir[n,{2}]);
@@ -45,6 +46,22 @@ cassimir[n_,r_]:=1/2 ((n-1)*Sum[r[[i]],{i,1,Length[r]}]+Sum[r[[i]],{i,1,Length[r
 (* braiding operator eigenvalues, n means SO(n) *)
 dimR[n_]=qno[n-1]+(qno[n-1]qno[n])/qno[2]//Simplify;
 (* quantum dimension of horizontal double box representation of SO(n) *)
+
+
+(* functions needed for single box fusion matrix *)
+qdimR[n_]= qno[n-1]+1;
+(* quantum dimension of horizontal one box representation of SO(n) *)
+qdim11=qno[n-1]+(qno[n-1]qno[n-2])/qno[2];
+qdim2=qno[n-1]+(qno[n-1]qno[n])/qno[2];
+xx=qno[n-2]/qno[2];
+yy=1/qno[2] Sqrt[(qno[2]+qno[n])(qno[2]+qno[n-2])];
+zz=qno[n]/qno[2];
+\[Lambda]plus[n_,1]:=t^(2cassimir[n,{1}]-1/2 cassimir[n,{}])
+\[Lambda]plus[n_,2]:=t^(2cassimir[n,{1}]-1/2 cassimir[n,{2}])
+\[Lambda]plus[n_,3]:=-t^(2cassimir[n,{1}]-1/2 cassimir[n,{1,1}])
+\[Lambda]minus[n_,1]:=t^(1/2 cassimir[n,{}])
+\[Lambda]minus[n_,2]:=t^(1/2 cassimir[n,{2}])
+\[Lambda]minus[n_,3]:=-t^(1/2 cassimir[n,{1,1}])
 
 
 Begin["`CommonDefinition`"]
