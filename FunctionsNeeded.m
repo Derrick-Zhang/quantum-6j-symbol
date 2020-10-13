@@ -15,12 +15,6 @@ tr::usage="Global variable";
 tc::usage="Global variable";
 a::usage="Global variable";
 
-aa=t/(1+t+t^2);
-bb=Sqrt[t/(1+t+t^2)];
-cc=Sqrt[1+t+t^2+t^3+t^4]/(1+t+t^2);
-dd=(1-t+t^2)/(1+t^2);
-ee=-(Sqrt[t (1+2 t+3 t^2+3 t^3+3 t^4+2 t^5+t^6)]/(1+t+2 t^2+t^3+t^4));
-ff=t^2/(1+t+2 t^2+t^3+t^4); (* building components of SO(4) double box fusion matrix *)
 
 qno[x_]:=(q^x-q^(-x))/(q-q^(-1))(*q-number*)
 qfac[n_]:=Product[qno[m],{m,1,n}](*q-factorial*)
@@ -57,17 +51,16 @@ dimR[n_]=qno[n-1]+(qno[n-1]qno[n])/qno[2]//Simplify;
 (* functions needed for single box fusion matrix *)
 qdimR[n_]= qno[n-1]+1;
 (* quantum dimension of horizontal one box representation of SO(n) *)
-qdim11=qno[n-1]+(qno[n-1]qno[n-2])/qno[2];
-qdim2=qno[n-1]+(qno[n-1]qno[n])/qno[2];
-xx=qno[n-2]/qno[2];
-yy=1/qno[2] Sqrt[(qno[2]+qno[n])(qno[2]+qno[n-2])];
-zz=qno[n]/qno[2];
-\[Lambda]plus[n_,1]:=t^(2cassimir[n,{1}]-1/2 cassimir[n,{}])
-\[Lambda]plus[n_,2]:=t^(2cassimir[n,{1}]-1/2 cassimir[n,{2}])
-\[Lambda]plus[n_,3]:=-t^(2cassimir[n,{1}]-1/2 cassimir[n,{1,1}])
-\[Lambda]minus[n_,1]:=t^(1/2 cassimir[n,{}])
-\[Lambda]minus[n_,2]:=t^(1/2 cassimir[n,{2}])
-\[Lambda]minus[n_,3]:=-t^(1/2 cassimir[n,{1,1}])
+\[Rho]2[1]=1;
+\[Rho]2[2]=qno[n-1]+(qno[n-1]qno[n])/qno[2];
+\[Rho]2[3]=qno[n-1]+(qno[n-1]qno[n-2])/qno[2];
+
+\[Lambda]plus[n_,1]:=q^(4cassimir[n,{1}]-cassimir[n,{}])
+\[Lambda]plus[n_,2]:=q^(4cassimir[n,{1}]-cassimir[n,{2}])
+\[Lambda]plus[n_,3]:=-q^(4cassimir[n,{1}]-cassimir[n,{1,1}])
+\[Lambda]minus[n_,1]:=q^(cassimir[n,{}])
+\[Lambda]minus[n_,2]:=q^(cassimir[n,{2}])
+\[Lambda]minus[n_,3]:=-q^(cassimir[n,{1,1}])
 
 
 Begin["`CommonDefinition`"]
