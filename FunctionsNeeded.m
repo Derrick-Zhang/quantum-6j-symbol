@@ -46,6 +46,12 @@ cassimir[n_,r_]:=1/2 ((n-1)*Sum[r[[i]],{i,1,Length[r]}]+Sum[r[[i]],{i,1,Length[r
 (* braiding operator eigenvalues, n means SO(n) *)
 dimR[n_]=qno[n-1]+(qno[n-1]qno[n])/qno[2]//Simplify;
 (* quantum dimension of horizontal double box representation of SO(n) *)
+\[Rho][1]=1;
+\[Rho][2]=(qno[n-1]qno[n-2])/qno[2]+qno[n-1];
+\[Rho][3]=qno[n-1]+(qno[n-1]qno[n])/qno[2];
+\[Rho][4]=(qno[n-1]qno[n-1]qno[n+1]qno[n-3])/(qno[2]qno[2]qno[3])+(qno[n-1]qno[n+1]qno[n-3])/(qno[2]qno[2]qno[3])+(qno[n-1]qno[n+1]qno[n-3])/(qno[2]qno[2])+(qno[n+1]qno[n-3])/(qno[2]qno[2]);
+\[Rho][5]=(qno[n-1]qno[n]qno[n+1]qno[n-2])/(qno[2]qno[4])+(qno[n-1]qno[n+1]qno[n-2])/qno[2];
+\[Rho][6]=(qno[n-1]qno[n]qno[n+1]qno[n+2])/(qno[2]qno[3]qno[4])+(qno[n-1]qno[n]qno[n+1])/(qno[2]qno[3]);
 
 
 (* functions needed for single box fusion matrix *)
