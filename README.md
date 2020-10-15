@@ -12,7 +12,17 @@ Mathematica files for SO(N) quantum 6j symbols
    - ~~add the last row and the last column~~
    - ~~using orthonomality property to determine other entries.~~
    
- - Quantize the SO(N) 6j symbol in Alisauskas' paper
+ - ~~Quantize the SO(N) 6j symbol in Alisauskas' paper~~
     - ~~program equation (2.1) in the paper~~
-    - try to quantize it!
+    - ~~try to quantize it!~~
+    
+## optional direction
+- SO(N) triple box fusion matrix
+   - obtain the fusion rule for triple boxes, using LieART
+   - plug in the entries corresponding to symmetric representations, 
+   using the SO(N) quantum 6j symbol for symmetric representations
+   - solve for the other entires, using the fact that each entry is proportional to the square root
+   of the quantum dimensions of represntaions that the row and column corresponds to
+   - calculate the Kauffman polynomial, using this triple box fusion matrix
+   
 
