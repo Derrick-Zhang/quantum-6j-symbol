@@ -22,7 +22,7 @@ Mathematica files for SO(N) quantum 6j symbols
    - plug in the entries corresponding to symmetric representations, 
    using the SO(N) quantum 6j symbol for symmetric representations
    - solve for the other entires, using the fact that each entry is proportional to the square root
-   of the quantum dimensions of represntaions that the row and column corresponds to
+   of the quantum dimensions of representations that the row and column corresponds to
    - calculate the Kauffman polynomial, using this triple box fusion matrix
    
 
