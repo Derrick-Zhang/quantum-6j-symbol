@@ -18,11 +18,14 @@ Mathematica files for SO(N) quantum 6j symbols
     
 ## optional direction
 - SO(N) triple box fusion matrix
-   - obtain the fusion rule for triple boxes, using LieART
+   - ~~obtain the fusion rule for triple boxes, using LieART~~
    - plug in the entries corresponding to symmetric representations, 
    using the SO(N) quantum 6j symbol for symmetric representations
    - solve for the other entires, using the fact that each entry is proportional to the square root
    of the quantum dimensions of representations that the row and column corresponds to
    - calculate the Kauffman polynomial, using this triple box fusion matrix
+   
+## ultimate goal
+find the close expression of quantum 6j symbol for each entries in the fusion matrix, not just for entries corresponding to symmmetric representations.
    
 
